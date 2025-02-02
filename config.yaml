@@ -2,11 +2,13 @@ logging:
   level: "INFO"
   format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
   date_format: "%Y-%m-%d %H:%M:%S"
+docs:
+  git_repository: "https://github.com/langchain-ai/langchain-api-docs-html.git"
+  local_directory: "../../data/langchain-api-docs"
 vector_store:
   index_name: "langchain-doc-index"
   embedding_model: "text-embedding-3-small"
   ingestion:
-    path_to_documents: "C:\\Workspace\\GitHub-Projects\\LangChainDocumentationHelper\\data\\langchain-docs\\api.python.langchain.com\\en\\latest"
     chunk_size: 600
     chunk_overlap: 50
 llm:
