@@ -1,5 +1,4 @@
 import logging
-
 from langchain_openai import OpenAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 

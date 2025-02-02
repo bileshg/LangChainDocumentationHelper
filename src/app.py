@@ -1,5 +1,27 @@
+import logging
 import streamlit as st
 import engine
+from dotenv import load_dotenv
+from src.config.config import conf
+
+load_dotenv()
+
+# create logger
+logger = logging.getLogger("app")
+logger.setLevel(conf.logging.level)
+
+# define handler and formatter
+handler = logging.StreamHandler()
+formatter = logging.Formatter(
+    conf.logging.format,
+    datefmt=conf.logging.date_format
+)
+
+# add formatter to handler
+handler.setFormatter(formatter)
+
+# add handler to logger
+logger.addHandler(handler)
 
 def format_sources(sources):
     return "\n".join(f"- {source}" for source in sources.split(","))
@@ -41,7 +63,7 @@ def _render_chats(prompt):
 
     response = engine.QnA.run(prompt)
 
-    print(response)
+    logger.debug(response)
 
     formatted_response = format_response(response)
 

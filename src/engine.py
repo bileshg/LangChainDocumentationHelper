@@ -1,6 +1,8 @@
+import logging
 from src.config.config import conf
 from src.rag.core import RagPipeline
 
+logger = logging.getLogger(__name__)
 
 QnA = RagPipeline(
     index_name=conf.vector_store.index_name,
