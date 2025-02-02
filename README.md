@@ -75,3 +75,7 @@ streamlit run src/app.py
 - `src/app.py`: Main application file for the Streamlit interface.
 - `src/config/config.py`: Configuration file loader.
 - `config.yaml`: Configuration settings for the project.
+
+## Acknowledgements
+
+Thanks to [Eden Marco](https://www.linkedin.com/in/eden-marco/) for the inspiration and the tutorial on which this project is based.
